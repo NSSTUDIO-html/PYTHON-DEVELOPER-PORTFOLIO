@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Quizzes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+      color: #2c3e50;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #2980b9;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    li {
+      background-color: #ffffff;
+      margin: 12px 0;
+      padding: 18px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    li:hover {
+      transform: translateY(-3px);
+      background-color: #eaf4fc;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-size: 20px;
+      font-weight: 500;
+      display: block;
+    }
+
+    a:hover {
+      color: #1a6bb8;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Available Quizzes</h2>
+  <ul>
+    {% for quiz in quizzes %}
+      <li><a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
