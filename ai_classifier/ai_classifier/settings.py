@@ -118,9 +118,11 @@ USE_TZ = True
 
 # settings.py
 
+import os
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']  # only in development
-STATIC_ROOT = BASE_DIR / 'staticfiles'    # used in production
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # for local development
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # for production (Render)
 
 
 
@@ -128,5 +130,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'    # used in production
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 
