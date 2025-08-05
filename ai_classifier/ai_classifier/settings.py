@@ -119,10 +119,11 @@ USE_TZ = True
 # settings.py
 
 import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # for local development
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # for production (Render)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Optional
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # For collectstatic
 
 
 
@@ -130,6 +131,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # for production (Render)
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 
 
