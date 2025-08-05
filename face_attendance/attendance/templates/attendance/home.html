@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Face Attendance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-10">
+  <div class="max-w-xl mx-auto bg-white shadow-lg rounded p-5">
+    <h1 class="text-2xl font-bold mb-5 text-center">Face Attendance System</h1>
+
+    <video id="video" autoplay class="w-full rounded mb-4"></video>
+    <canvas id="canvas" class="hidden"></canvas>
+
+    <div class="text-center">
+      <button id="captureBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Capture & Mark Attendance
+      </button>
+      <p id="status" class="mt-4 text-green-600 font-medium"></p>
+    </div>
+  </div>
+
+  <script src="{% static 'js/camera.js' %}"></script>
+</body>
+</html>
