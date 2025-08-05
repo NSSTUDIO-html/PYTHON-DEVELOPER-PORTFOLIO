@@ -1,0 +1,47 @@
+<!-- inventory_app/templates/inventory_app/product_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="max-w-5xl mx-auto py-10 px-4">
+        <h1 class="text-3xl font-bold mb-6">🛒 Product List</h1>
+
+        {% if products %}
+        <ul class="space-y-4">
+            {% for product in products %}
+                <li class="bg-white shadow-md rounded-lg p-4 flex justify-between items-center">
+                    <div>
+                        <h2 class="text-xl font-semibold">{{ product.name }}</h2>
+                        <p class="text-sm text-gray-600">Category: {{ product.category.name }}</p>
+                        <p class="text-sm text-gray-600">Quantity: {{ product.quantity }}</p>
+                        <p class="text-lg font-bold text-green-600">₹{{ product.price }}</p>
+                    </div>
+                    <div class="text-sm text-gray-500">
+                        Last Updated:<br> {{ product.updated_at|date:"d M Y, H:i" }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p class="text-gray-700 text-center mt-10">No products available.</p>
+        {% endif %}
+
+        <div class="mt-10 flex flex-col gap-4">
+            <a href="{% url 'home' %}" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 w-fit">← Back to Home</a>
+
+            <div class="mt-4">
+                <h2 class="text-xl font-bold mb-2">Admin Models</h2>
+                <ul class="list-disc list-inside space-y-1 text-blue-700">
+                    <li><a href="/admin/inventory_app/product/" class="hover:underline">Manage Products</a></li>
+                    <li><a href="/admin/inventory_app/category/" class="hover:underline">Manage Categories</a></li>
+                    <!-- Add more model links if needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
