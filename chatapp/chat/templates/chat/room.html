@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat Room</title>
+  <script>
+    const roomName = "{{ room_name }}";
+    const chatSocket = new WebSocket(
+      'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
+    );
+
+    chatSocket.onmessage = function(e) {
+      const data = JSON.parse(e.data);
+      const messageContainer = document.querySelector('#chat-log');
+      const messageElem = document.createElement('div');
+      messageElem.className = 'p-2 bg-blue-100 rounded my-1';
+      messageElem.textContent = data.message;
+      messageContainer.appendChild(messageElem);
+    };
+
+    chatSocket.onclose = function(e) {
+      console.error('Chat socket closed unexpectedly');
+    };
+
+    function sendMessage() {
+      const input = document.querySelector('#chat-message-input');
+      const message = input.value;
+      chatSocket.send(JSON.stringify({
+        'message': message
+      }));
+      input.value = '';
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+  <h2 class="text-xl mb-4">Room: {{ room_name }}</h2>
+
+  <div id="chat-log" class="space-y-2 mb-4 max-h-64 overflow-y-scroll border border-gray-300 p-4 bg-white rounded"></div>
+
+  <div class="flex space-x-2">
+    <input id="chat-message-input" type="text" class="flex-1 p-2 border rounded" placeholder="Type message...">
+    <button onclick="sendMessage()" class="px-4 py-2 bg-blue-500 text-white rounded">Send</button>
+  </div>
+</body>
+</html>

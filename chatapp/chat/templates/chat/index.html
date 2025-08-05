@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Join Chat Room</title>
+  <script>
+    function joinRoom() {
+        const roomName = document.getElementById("room-name-input").value;
+        window.location.pathname = '/chat/' + roomName + '/';
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+      <h1 class="text-xl font-bold mb-4">Join a Chat Room</h1>
+      <input id="room-name-input" type="text" class="border p-2 w-full mb-4" placeholder="Enter Room Name" />
+      <button onclick="joinRoom()" class="bg-blue-500 text-white px-4 py-2 rounded w-full">Join</button>
+    </div>
+  </div>
+</body>
+</html>
