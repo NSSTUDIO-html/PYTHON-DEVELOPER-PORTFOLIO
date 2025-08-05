@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Management System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'students' %}">Students</a> |
+        <a href="{% url 'teachers' %}">Teachers</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
