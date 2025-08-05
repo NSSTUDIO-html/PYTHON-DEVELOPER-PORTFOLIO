@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 0; }
+        .header { background: #333; color: white; padding: 20px; text-align: center; }
+        .post-card { background: white; margin: 20px auto; padding: 20px; width: 80%; border-radius: 10px; box-shadow: 0 0 10px gray; }
+        a { text-decoration: none; color: #007BFF; }
+    </style>
+</head>
+<body>
+    <div class="header"><h1>My Django Blog</h1></div>
+    {% for post in posts %}
+    <div class="post-card">
+        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+        <p><small>By {{ post.author }} | {{ post.created }}</small></p>
+        <p>{{ post.content|truncatewords:30 }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

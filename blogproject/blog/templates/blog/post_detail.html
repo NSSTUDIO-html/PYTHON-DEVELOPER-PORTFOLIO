@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 0; }
+        .container { background: white; margin: 50px auto; padding: 40px; width: 70%; border-radius: 10px; box-shadow: 0 0 10px gray; }
+        a { color: #007BFF; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p><small>By {{ post.author }} | {{ post.created }}</small></p>
+        <hr>
+        <p>{{ post.content }}</p>
+        <br>
+        <a href="{% url 'home' %}">← Back to Home</a>
+    </div>
+</body>
+</html>
