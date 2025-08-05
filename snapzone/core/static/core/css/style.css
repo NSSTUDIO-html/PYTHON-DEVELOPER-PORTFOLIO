@@ -1,0 +1,21 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
