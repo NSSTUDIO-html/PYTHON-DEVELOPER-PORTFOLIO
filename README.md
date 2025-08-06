@@ -69,8 +69,8 @@ AI animation tool that brings characters to life in 3D motion using TensorFlow.j
 - 🌐 Portfolio: [ns-portfolio-delta.vercel.app](https://ns-portfolio-delta.vercel.app)
 - 🐙 GitHub: [github.com/NSSTUDIO-html](https://github.com/NSSTUDIO-html)
 - 🔗 LinkedIn: [linkedin.com/in/naga-sasank-a06268374](https://www.linkedin.com/in/naga-sasank-a06268374)
-- 📧 Email: saifilmog@gmail.com
-- 📸 Instagram: [@nsstudio_html](https://www.instagram.com/nsstudio_html)
+- 📧 Email: rockingshooters7@gmail.com
+- 📸 Instagram: [@nsstudio_html](https://www.instagram.com/rs_sasankml5h)
 
 ---
 
