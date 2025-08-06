@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m#_g%95puy6+v_%7*^%^)wfwr+$2mq)+d6cqyjrdyp0#3w^p)o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,3 +123,4 @@ STATICFILES_DIRS = [BASE_DIR / "attendance/static"]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
