@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_4kk@nz(-!0drr(phuc_ogjsfl@jv(+yq=4msr#%bo)h@zlkqj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -129,5 +129,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 ASGI_APPLICATION = 'chatapp.asgi.application'
